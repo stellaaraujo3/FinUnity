@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="view.controller.SolicitanteController"
+            prefWidth="1000" prefHeight="600"
+            stylesheets="@../css/menu.css">
+
+    <!-- TOPO -->
+    <top>
+        <VBox spacing="0">
+
+            <!-- HEADER AZUL -->
+            <HBox spacing="10" alignment="CENTER" styleClass="header" prefHeight="50">
+                <children>
+                    <ImageView fitHeight="80.0" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/logo_FinUnity.png"/>
+                        </image>
+                    </ImageView>
+                </children>
+            </HBox>
+
+            <!-- LINHA DA SETA -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <children>
+                    <Button onAction="#voltarMenu" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                        <graphic>
+                            <ImageView fitHeight="24" preserveRatio="true">
+                                <image>
+                                    <Image url="@../images/seta-esquerda.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <tooltip>
+                            <Tooltip text="Voltar ao Menu"/>
+                        </tooltip>
+                    </Button>
+                </children>
+            </HBox>
+
+        </VBox>
+    </top>
+
+    <!-- CENTER -->
+    <center >
+        <HBox spacing="40" alignment="CENTER"
+              style =" fx-background-color: #E7E7E7; -fx-padding: 30;">
+
+            <!-- Formulário -->
+            <VBox fx:id="boxCadastro"
+                  spacing="20"
+                  prefWidth="420"
+                  alignment="TOP_LEFT"
+                  styleClass="borda-pane"
+                  style="-fx-background-color: #E6E6E6; -fx-padding: 30; -fx-background-radius: 10;">
+
+                <Label text="Cadastro/Atualização de Solicitantes"
+                       style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+
+                <Label text="Nome"/>
+                <TextField fx:id="txtNome" prefWidth="300"/>
+
+                <HBox spacing="15">
+                    <VBox spacing="5">
+                        <Label text="Setor"/>
+                        <TextField fx:id="txtSetor" prefWidth="140"/>
+                    </VBox>
+                    <VBox spacing="5">
+                        <Label text="Telefone"/>
+                        <TextField fx:id="txtTelefone" prefWidth="140"/>
+                    </VBox>
+                </HBox>
+
+                <HBox spacing="15" alignment="CENTER_LEFT">
+                    <Button text="Cadastrar" onAction="#cadastrarSolicitante"
+                            style="-fx-background-color: #2C2C3C; -fx-text-fill: white; -fx-cursor: hand;"/>
+                    <Button text="Atualizar" onAction="#atualizarSolicitante"
+                            style="-fx-background-color: #2C2C3C; -fx-text-fill: white; -fx-cursor: hand;"/>
+                </HBox>
+            </VBox>
+
+            <!-- Lista -->
+            <VBox spacing="20"
+                  prefWidth="420"
+                  alignment="TOP_CENTER"
+                  styleClass="borda-pane"
+                  style="-fx-background-color: #E6E6E6; -fx-padding: 30; -fx-background-radius: 10;">
+
+                <Label text="Listar todos"
+                       style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+
+                <ListView fx:id="listViewSolicitantes"
+                          prefHeight="300"
+                          prefWidth="320"
+                          styleClass="simple-list-view"/>
+
+                <HBox spacing="15" alignment="CENTER">
+                    <Button text="Excluir" onAction="#excluirSolicitante"
+                            style="-fx-background-color: #2C2C3C; -fx-text-fill: white; -fx-cursor: hand;"/>
+                </HBox>
+            </VBox>
+
+        </HBox>
+    </center>
+</BorderPane>

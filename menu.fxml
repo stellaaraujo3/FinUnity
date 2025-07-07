@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="view.controller.MenuController"
+            prefWidth="900.0" prefHeight="600.0"
+            stylesheets="@../css/style.css">
+
+    <!-- TOPO -->
+    <top>
+        <HBox alignment="CENTER" styleClass="header">
+            <children>
+                <ImageView fitWidth="100.0" preserveRatio="true" styleClass="logo">
+                    <image>
+                        <Image url="@../images/logo_FinUnity.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </HBox>
+    </top>
+
+    <!-- CENTRO -->
+    <center>
+        <VBox alignment="CENTER" spacing="30">
+            <children>
+                <GridPane styleClass="menu-grid">
+                    <children>
+                        <Button text="Movimentações financeiras"
+                                onAction="#abrirMovimentacoes"
+                                style="-fx-padding: 15 20 15 20;"
+                                styleClass="menu-button"
+                                GridPane.rowIndex="0" GridPane.columnIndex="0">
+                            <graphic>
+                                <ImageView fitWidth="40.0" fitHeight="40.0">
+                                    <image>
+                                        <Image url="@../images/interruptor.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+
+                        <Button text="Comissões Pagas"
+                                onAction="#abrirComissoes"
+                                style="-fx-padding: 15 20 15 20;"
+                                styleClass="menu-button"
+                                GridPane.rowIndex="0" GridPane.columnIndex="1">
+                            <graphic>
+                                <ImageView fitWidth="40.0" fitHeight="40.0">
+                                    <image>
+                                        <Image url="@../images/sucesso.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+
+                        <Button text="Cadastro de Solicitantes"
+                                onAction="#abrirCadastroSolicitantes"
+                                style="-fx-padding: 15 20 15 20;"
+                                styleClass="menu-button"
+                                GridPane.rowIndex="1" GridPane.columnIndex="0">
+                            <graphic>
+                                <ImageView fitWidth="40.0" fitHeight="40.0">
+                                    <image>
+                                        <Image url="@../images/adicionar-usuario.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+
+                        <Button text="Vales"
+                                onAction="#abrirVales"
+                                style="-fx-padding: 15 20 15 20;"
+                                styleClass="menu-button"
+                                GridPane.rowIndex="1" GridPane.columnIndex="1">
+                            <graphic>
+                                <ImageView fitWidth="40.0" fitHeight="40.0">
+                                    <image>
+                                        <Image url="@../images/adiantamento-em-dinheiro-comerciante.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+
+                        <Button text="Pagamento de Salários"
+                                onAction="#abrirPagamentosSalarios"
+                                style="-fx-padding: 15 20 15 20;"
+                                styleClass="menu-button"
+                                GridPane.rowIndex="2" GridPane.columnIndex="0">
+                            <graphic>
+                                <ImageView fitWidth="40.0" fitHeight="40.0">
+                                    <image>
+                                        <Image url="@../images/salario.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+
+                        <Button text="Cadastro de Beneficiários de Comissões"
+                                onAction="#abrirCadastroBeneficiarios"
+                                style="-fx-padding: 15 20 15 20;"
+                                styleClass="menu-button"
+                                GridPane.rowIndex="2" GridPane.columnIndex="1">
+                            <graphic>
+                                <ImageView fitWidth="40.0" fitHeight="40.0">
+                                    <image>
+                                        <Image url="@../images/forma.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+
+                        <Button text="Relatórios"
+                                onAction="#abrirRelatorios"
+                                style="-fx-padding: 15 20 15 20;"
+                                styleClass="menu-button"
+                                GridPane.rowIndex="3" GridPane.columnIndex="0">
+                            <graphic>
+                                <ImageView fitWidth="40.0" fitHeight="40.0">
+                                    <image>
+                                        <Image url="@../images/crescimento.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+
+                        <Button text="Status dos Funcionarios"
+                                onAction="#abrirBeneficiariosStatus"
+                                style="-fx-padding: 15 20 15 20;"
+                                styleClass="menu-button"
+                                GridPane.rowIndex="3" GridPane.columnIndex="1">
+                            <graphic>
+                                <ImageView fitWidth="40.0" fitHeight="40.0">
+                                    <image>
+                                        <Image url="@../images/aviso.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </GridPane>
+
+                <Button text="Backup em nuvem"
+                        onAction="#abrirBackup"
+                        style="-fx-padding: 15 20 15 20;"
+                        styleClass="menu-button">
+                    <graphic>
+                        <ImageView fitWidth="40.0" fitHeight="40.0">
+                            <image>
+                                <Image url="@../images/copia-de-seguranca.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </VBox>
+    </center>
+
+</BorderPane>

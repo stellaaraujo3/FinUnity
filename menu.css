@@ -1,0 +1,95 @@
+.root {
+    -fx-background-color: #e5e5e5;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+}
+
+.header {
+    -fx-background-color: #2c2f48;
+    -fx-pref-height: 40px;
+}
+
+.label-title {
+    -fx-font-size: 18px;
+    -fx-text-fill: #2c2f48;
+    -fx-font-weight: bold;
+}
+
+.table-border {
+    -fx-border-color: #CBC7C7;
+    -fx-border-width: 1;
+    -fx-background-color:#E4E4E4;
+    -fx-padding: 10;
+}
+
+
+.table-view .column-header-background {
+    -fx-background-color: #e3e3e3;
+}
+
+.table-view {
+    -fx-table-cell-border-color: #c4c4c4;
+    -fx-table-header-border-color: #c4c4c4;
+    -fx-background-color: #e3e3e3;
+}
+
+.table-view .filler {
+    -fx-background-color: transparent;
+}
+
+
+.button-dark {
+    -fx-background-color: #2c2f48;
+    -fx-text-fill: white;
+    -fx-background-radius: 1;
+    -fx-padding: 8 20 8 20;
+    -fx-font-weight: bold;
+}
+
+.button-dark:hover {
+    -fx-background-color: #3b3e61;
+}
+
+.menu-button {
+    -fx-background-color: #2c2f48;
+    -fx-text-fill: white;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 10;
+    -fx-font-size: 14px;
+}
+
+.menu-button:hover {
+    -fx-background-color: #44476c;
+}
+
+
+/* Bordas externas suaves */
+.borda-pane {
+    --body-background-color:#D8D8D8 ;
+    -fx-border-color: #CBC7C7;         /* Cor da borda */
+    -fx-border-width: 2;               /* Largura da borda em pixels */
+    -fx-border-radius: 1;              /* Bordas arredondadas */
+    -fx-background-radius: 1;
+    -fx-padding: 10;                   /* Espaçamento interno */
+    -fx-border-style: solid;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);
+}
+
+.simple-list-view {
+    -fx-background-color: white;
+    -fx-control-inner-background: white;
+    -fx-border-color:#CBC7C7;
+}
+
+.simple-list-view .list-cell {
+    -fx-background-color: white;
+    -fx-border-width: 0;
+    -fx-padding: 5 10 5 10;
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+}
+.simple-list-view .list-cell:hover {
+    -fx-background-color: #D1D1E0;
+    -fx-cursor: hand;
+}

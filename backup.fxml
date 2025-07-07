@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="view.controller.BackupController">
+
+    <VBox spacing="20" alignment="CENTER" prefWidth="600" prefHeight="400" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+        <!-- Título -->
+        <Label text="Backup Automático" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333333;"/>
+
+        <!-- Texto explicativo -->
+        <Label text="O sistema realiza backups automáticos diariamente para nuvem."
+               wrapText="true"
+               textAlignment="CENTER"
+               maxWidth="500"
+               style="-fx-font-size: 14px; -fx-text-fill: #555555;"/>
+
+        <!-- Último backup -->
+        <Label fx:id="lblUltimoBackup"
+               text="Último backup realizado em: --/--/---- às --:-- - status desconhecido"
+               style="-fx-font-size: 16px; -fx-text-fill: #2e5984;"/>
+
+        <!-- Botão -->
+        <Button text="Forçar Backup Agora"
+                fx:id="btnBackup"
+                onAction="#forcarBackup"
+                style="-fx-background-color: #2e5984; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20 10 20; -fx-background-radius: 5;"/>
+
+    </VBox>
+</AnchorPane>

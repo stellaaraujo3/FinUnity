@@ -1,0 +1,42 @@
+.root {
+    -fx-background-color: rgb(217, 217, 217);
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+}
+
+.header {
+    -fx-background-color: #2c2f48;
+    -fx-pref-height: 50px;
+}
+
+.logo {
+    -fx-fit-width: 100px;
+}
+
+.menu-grid {
+    -fx-hgap: 30px;
+    -fx-vgap: 20px;
+    -fx-alignment: center;
+}
+
+.menu-button .image-view {
+    -fx-padding: 10;
+}
+
+.menu-button {
+    -fx-background-color: rgb(191, 191, 191);
+    -fx-pref-width: 350px;
+    -fx-pref-height: 60px;
+    -fx-border-color: #a8a7a7;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-content-display: LEFT;
+    -fx-graphic-text-gap: 15px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 14px;
+    -fx-text-fill: black;
+}
+
+.menu-button:hover {
+    -fx-background-color: #c8c8c8;
+}

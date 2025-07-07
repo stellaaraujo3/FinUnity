@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="view.controller.ValesController"
+            prefWidth="1100.0" prefHeight="700.0"
+            stylesheets="@../css/menu.css">
+
+    <!-- TOPO -->
+    <top>
+        <VBox spacing="0">
+
+            <!-- HEADER AZUL -->
+            <HBox spacing="10" alignment="CENTER" styleClass="header" prefHeight="50">
+                <children>
+                    <ImageView fitHeight="80.0" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/logo_FinUnity.png"/>
+                        </image>
+                    </ImageView>
+                </children>
+            </HBox>
+
+            <!-- LINHA DA SETA -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <children>
+                    <Button onAction="#voltarMenu" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                        <graphic>
+                            <ImageView fitHeight="24" preserveRatio="true">
+                                <image>
+                                    <Image url="@../images/seta-esquerda.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <tooltip>
+                            <Tooltip text="Voltar ao Menu"/>
+                        </tooltip>
+                    </Button>
+                </children>
+            </HBox>
+
+        </VBox>
+    </top>
+
+    <!-- CENTRO -->
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <!-- TÍTULO -->
+            <Label text="Vales"
+                   style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2C2F48;"
+                   alignment="TOP_CENTER"/>
+
+            <!-- FILTROS -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Data inicial:"/>
+                <DatePicker fx:id="dpDataInicial"/>
+
+                <Label text="Data final:"/>
+                <DatePicker fx:id="dpDataFinal"/>
+
+                <Label text="Situação"/>
+                <ComboBox fx:id="cbSituacaoFiltro" prefWidth="150"/>
+
+                <Label text="Banco"/>
+                <ComboBox fx:id="cbBancoFiltro" prefWidth="150"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Solicitante"/>
+                <ComboBox fx:id="cbSolicitantesFiltro" prefWidth="150"/>
+
+                <Label text="Forma de Desconto"/>
+                <ComboBox fx:id="cbFormaDescontoFiltro" prefWidth="150"/>
+
+                <Label text="Beneficiario"/>
+                <ComboBox fx:id="cbBeneficiarioFiltro" prefWidth="200" />
+
+                <Label text="Empresa"/>
+                <ComboBox fx:id="cbEmpresaFiltro" prefWidth="150"/>
+
+                <Button text="Filtrar" onAction="#filtrarVales" styleClass="menu-button"/>
+            </HBox>
+
+            <!-- TABELA -->
+            <VBox style="-fx-border-color: #c4c4c4; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-color: #f5f5f5; -fx-padding: 10;">
+                <TableView fx:id="tabelaVales" prefWidth="1000.0" prefHeight="400.0">
+                    <columns>
+                        <TableColumn fx:id="colData" text="Data" prefWidth="150"/>
+                        <TableColumn fx:id="colBeneficiario" text="Beneficiário" prefWidth="150"/>
+                        <TableColumn fx:id="colEmpresa" text="Empresa" prefWidth="140"/>
+                        <TableColumn fx:id="colFormaDesconto" text="Forma de desconto" prefWidth="150"/>
+                        <TableColumn fx:id="colParcelas" text="Parcels" prefWidth="90"/>
+                        <TableColumn fx:id="colValor" text="Valor" prefWidth="100"/>
+                        <TableColumn fx:id="colBanco" text="Banco" prefWidth="100"/>
+                        <TableColumn fx:id="colForma" text="Forma de pagamento" prefWidth="150"/>
+                        <TableColumn fx:id="colSolicitante" text="Solicitante" prefWidth="140"/>
+                        <TableColumn fx:id="colComprovante" text="Comprovante" prefWidth="150"/>
+                        <TableColumn fx:id="colRecibo" text="Recibo Assinado" prefWidth="150"/>
+                        <TableColumn fx:id="colSituacao" text="Situação" prefWidth="100"/>
+                    </columns>
+                </TableView>
+            </VBox>
+
+            <!-- BARRA INFERIOR -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <children>
+                    <!-- BOTÃO + -->
+                    <Button onAction="#adicionarLinha" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                        <graphic>
+                            <ImageView fitHeight="24" preserveRatio="true">
+                                <image>
+                                    <Image url="@../images/botao-adicionar.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <tooltip>
+                            <Tooltip text="Adicionar nova linha"/>
+                        </tooltip>
+                    </Button>
+
+                    <Button text="Salvar" onAction="#salvarDados" styleClass="menu-button"/>
+                    <Button text="Excluir Linha" onAction="#excluirLinha" styleClass="menu-button"/>
+
+                    <Region fx:id="spacer" HBox.hgrow="ALWAYS"/>
+                    <Label text="Valor total:" style="-fx-font-weight: bold;"/>
+                    <TextField fx:id="txtTotal" editable="false" style="-fx-pref-width: 120px;"/>
+                </children>
+            </HBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

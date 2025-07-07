@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="view.controller.BeneficiarioController"
+            prefWidth="1000.0" prefHeight="600.0"
+            stylesheets="@../css/menu.css">
+
+    <!-- TOPO -->
+    <top>
+        <VBox spacing="0">
+            <!-- HEADER AZUL -->
+            <HBox spacing="10" alignment="CENTER" styleClass="header" prefHeight="50">
+                <children>
+                    <ImageView fitHeight="80.0" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/logo_FinUnity.png"/>
+                        </image>
+                    </ImageView>
+                </children>
+            </HBox>
+
+            <!-- LINHA DA SETA -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <children>
+                    <Button onAction="#voltarMenu" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                        <graphic>
+                            <ImageView fitHeight="24" preserveRatio="true">
+                                <image>
+                                    <Image url="@../images/seta-esquerda.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <tooltip>
+                            <Tooltip text="Voltar ao Menu"/>
+                        </tooltip>
+                    </Button>
+                </children>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- CENTRO -->
+    <center>
+        <HBox spacing="30" alignment="CENTER">
+
+
+            <!-- FORMULÁRIO -->
+            <VBox spacing="15" prefWidth="450" alignment="TOP_LEFT"
+                  style="-fx-background-color: #E6E6E6; -fx-padding: 20; -fx-background-radius: 10;">
+                <Label text="Cadastro/Atualização de Beneficiários" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+
+                <Label text="Nome"/>
+                <TextField fx:id="txtNome" prefWidth="300"/>
+
+                <Label text="CPF"/>
+                <TextField fx:id="txtCpf" prefWidth="300"/>
+
+                <Label text="Telefone"/>
+                <TextField fx:id="txtTelefone" prefWidth="300"/>
+
+                <Label text="Profissão"/>
+                <TextField fx:id="txtProfissao" prefWidth="300"/>
+
+                <Label text="Empresa"/>
+                <ComboBox fx:id="cbEmpresa" prefWidth="300"/>
+
+                <Label text="Valor Salarial"/>
+                <TextField fx:id="txtValorSalarial" prefWidth="300"/>
+
+                <Label text="Limite Vale"/>
+                <TextField fx:id="txtLimiteVale" prefWidth="300"/>
+
+                <HBox spacing="10">
+                    <Button text="Cadastrar" onAction="#cadastrarBeneficiario"
+                            style="-fx-background-color: #2C2C3C; -fx-text-fill: white;"/>
+                    <Button text="Atualizar" onAction="#atualizarBeneficiario"
+                            style="-fx-background-color: #2C2C3C; -fx-text-fill: white;"/>
+                </HBox>
+            </VBox>
+
+            <!-- LISTA -->
+            <VBox spacing="10" prefWidth="400" alignment="TOP_CENTER"
+                  style="-fx-background-color: #E6E6E6; -fx-padding: 20; -fx-background-radius: 10;">
+                <Label text="Beneficiários Cadastrados" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+
+                <ListView fx:id="listViewBeneficiarios" prefHeight="350" prefWidth="300"
+                          onMouseClicked="#selecionarBeneficiario"/>
+
+                <HBox spacing="10">
+                    <Button text="Excluir" onAction="#excluirBeneficiario"
+                            style="-fx-background-color: #2C2C3C; -fx-text-fill: white;"/>
+                </HBox>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

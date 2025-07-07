@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="view.controller.MovimentacaoFinanceiraController"
+            prefWidth="1100.0" prefHeight="700.0"
+            stylesheets="@../css/menu.css">
+
+    <!-- TOPO (SETA E HEADER) -->
+    <top>
+        <VBox spacing="0">
+            <!-- HEADER AZUL -->
+            <HBox alignment="CENTER" styleClass="header" prefHeight="50">
+                <children>
+                    <ImageView fitHeight="80.0" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/logo_FinUnity.png"/>
+                        </image>
+                    </ImageView>
+                </children>
+            </HBox>
+            <!-- LINHA DA SETA -->
+            <HBox alignment="CENTER_LEFT" spacing="10" >
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <children>
+                    <Button onAction="#voltarMenu" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                        <graphic>
+                            <ImageView fitHeight="24" preserveRatio="true">
+                                <image>
+                                    <Image url="@../images/seta-esquerda.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <tooltip>
+                            <Tooltip text="Voltar ao Menu"/>
+                        </tooltip>
+                    </Button>
+                </children>
+            </HBox>
+
+        </VBox>
+    </top>
+
+    <!-- CENTRO -->
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <!-- TÍTULO CENTRALIZADO -->
+            <Label text="Movimentação Financeira"
+                   style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2C2F48;"
+                   alignment="CENTER"/>
+
+            <!-- FILTROS -->
+            <VBox spacing="10" alignment="CENTER_LEFT">
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Data inicial:"/>
+                    <DatePicker fx:id="dpDataInicial"/>
+
+                    <Label text="Data final:"/>
+                    <DatePicker fx:id="dpDataFinal"/>
+
+                    <Label text="Tipo:"/>
+                    <ComboBox fx:id="cbTipoFiltro" prefWidth="120"/>
+
+                    <Label text="Empresa"/>
+                    <ComboBox fx:id="cbEmpresaFiltro" prefWidth="150"/>
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Solicitantes"/>
+                    <ComboBox fx:id="cbSolicitantesFiltro" prefWidth="150"/>
+
+                    <Label text="Forma de Pagamento"/>
+                    <ComboBox fx:id="cbFormaPagamentoFiltro" prefWidth="150"/>
+
+                    <Label text="Banco"/>
+                    <ComboBox fx:id="cbBancoFiltro" prefWidth="150"/>
+
+
+
+                    <Button text="Filtrar" onAction="#filtrarMovimentacoes" styleClass="menu-button"/>
+                </HBox>
+
+            </VBox>
+
+
+
+            <!-- TABELA -->
+            <VBox styleClass="table-border">
+                <TableView fx:id="tabelaMovimentacoes" prefWidth="1000.0" prefHeight="400.0">
+                    <columns>
+                        <TableColumn fx:id="colData" text="Data" prefWidth="100"/>
+                        <TableColumn fx:id="colTipo" text="Tipo" prefWidth="100"/>
+                        <TableColumn fx:id="colDescricao" text="Descrição" prefWidth="150"/>
+                        <TableColumn fx:id="colEmpresa" text="Empresa" prefWidth="150"/>
+                        <TableColumn fx:id="colValor" text="Valor" prefWidth="100"/>
+                        <TableColumn fx:id="colBanco" text="Banco" prefWidth="100"/>
+                        <TableColumn fx:id="colForma" text="Forma de pagamento" prefWidth="150"/>
+                        <TableColumn fx:id="colSolicitante" text="Solicitante" prefWidth="150"/>
+                        <TableColumn fx:id="colComprovante" text="Comprovante" prefWidth="150"/>
+                        <TableColumn fx:id="colNotaFiscal" text="Nota fiscal/Cupom" prefWidth="150"/>
+                    </columns>
+                </TableView>
+
+
+
+            <!-- BOTÃO +, ABAIXO DA TABELA, ALINHADO À ESQUERDA -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <children>
+                    <Button onAction="#adicionarLinha" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                        <graphic>
+                            <ImageView fitHeight="24" preserveRatio="true">
+                                <image>
+                                    <Image url="@../images/botao-adicionar.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <tooltip>
+                            <Tooltip text="Adicionar nova linha"/>
+                        </tooltip>
+                    </Button>
+                </children>
+            </HBox>
+
+            <!-- BOTÕES SALVAR E EXCLUIR, CENTRALIZADOS -->
+            <HBox alignment="CENTER" spacing="20" >
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <children>
+                    <Button text="Salvar" onAction="#salvarDados" styleClass="menu-button"/>
+                    <Button text="Excluir Linha" onAction="#excluirLinha" styleClass="menu-button"/>
+                </children>
+            </HBox>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Valor total saídas:"/>
+                    <TextField fx:id="txtTotalSaidas" editable="false"/>
+
+                    <Label text="Valor total entradas:"/>
+                    <TextField fx:id="txtTotalEntradas" editable="false"/>
+
+                    <Label text="Total subtraído:"/>
+                    <TextField fx:id="txtTotalSubtraido" editable="false"/>
+                </HBox>
+
+            </VBox>
+        </VBox>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="view.controller.BeneficiarioStatusController"
+            prefWidth="1100" prefHeight="700"
+            stylesheets="@../css/menu.css">
+
+     <!-- TOPO -->
+    <top>
+        <VBox spacing="0">
+
+            <!-- HEADER AZUL -->
+            <HBox spacing="10" alignment="CENTER" styleClass="header" prefHeight="50">
+                <children>
+                    <ImageView fitHeight="80.0" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/logo_FinUnity.png"/>
+                        </image>
+                    </ImageView>
+                </children>
+            </HBox>
+
+            <!-- LINHA DA SETA -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <children>
+                    <Button onAction="#voltarMenu" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                        <graphic>
+                            <ImageView fitHeight="24" preserveRatio="true">
+                                <image>
+                                    <Image url="@../images/seta-esquerda.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <tooltip>
+                            <Tooltip text="Voltar ao Menu"/>
+                        </tooltip>
+                    </Button>
+                </children>
+            </HBox>
+
+        </VBox>
+    </top>
+
+    <!-- CENTRO -->
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <!-- TÍTULO -->
+            <Label text="Status dos Funcionarios"
+                   style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2C2F48;"
+                   alignment="CENTER"/>
+
+            <!-- TABELA -->
+            <VBox style="-fx-border-color: #c4c4c4; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-color: #f5f5f5; -fx-padding: 10;">
+                <TableView fx:id="tabelaBeneficiarios" prefWidth="1000.0" prefHeight="400.0">
+                    <columns>
+                        <TableColumn fx:id="colNome" text="Nome" prefWidth="300"/>
+                        <TableColumn fx:id="colStatus" text="Status" prefWidth="200"/>
+                        <TableColumn fx:id="colLimiteDisponivel" text="Limite Disponível" prefWidth="150"/>
+                        <TableColumn fx:id="colAcoes" text="Ações" prefWidth="300"/>
+                    </columns>
+                </TableView>
+            </VBox>
+
+        </VBox>
+    </center>
+</BorderPane>
