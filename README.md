@@ -17,7 +17,7 @@ Lançamentos de entradas e saídas
 
 Anexos de comprovantes de pagamento/recebimento
 
-📊 Relatórios
+ Relatórios
 Relatório diário
 
 Relatório mensal
@@ -54,9 +54,8 @@ Jakarta Mail (para envio de e-mails)
 Maven (para gerenciamento de dependências)
 
  Estrutura do Projeto
-CSS
-Copiar
-Editar
+
+
 FinUnity_sistem/
 │
 ├── src/
