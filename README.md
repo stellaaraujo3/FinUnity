@@ -78,7 +78,8 @@ FinUnity_sistem/
 │   └── original-FinUnity-1.0-SNAPSHOT.jar
 │
 └── pom.xml
-🚀 Como Executar o Sistema
+
+Como Executar o Sistema
 1. Pré-Requisitos
 Java JDK 17 ou superior
 
@@ -91,25 +92,21 @@ Microsoft Visual C++ Redistributable (para Windows)
 2. Compilar o Projeto
 Abra o terminal (ou PowerShell) e execute:
 
-festança
 
 mvn clean package
 O JAR será gerado em:
 
-pgsql
 target/FinUnity-1.0-SNAPSHOT.jar
+
 3. Executar o JAR
 No PowerShell (em uma linha):
-
-festança
 
 java --enable-native-access=ALL-UNNAMED --module-path "C:\javafx-sdk-24.0.1\lib" --add-modules javafx.controls,javafx.fxml -jar .\target\FinUnity-1.0-SNAPSHOT.jar
 Se estiver em máquina sem Direct3D:
 
-festança
-
 java -Dprism.order=sw --enable-native-access=ALL-UNNAMED --module-path "C:\javafx-sdk-24.0.1\lib" --add-modules javafx.controls,javafx.fxml -jar .\target\FinUnity-1.0-SNAPSHOT.jar
-🐞 Problemas Conhecidos
+
+Problemas Conhecidos
 Erro QuantumRenderer: pode ocorrer em máquinas sem suporte a Direct3D. Solução: adicionar -Dprism.order=sw.
 
 Dependência do Visual C++ Redistributable: necessário para funcionamento das DLLs do JavaFX no Windows.
